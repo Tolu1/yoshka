@@ -2,7 +2,7 @@ import React from 'react'
 
 function MySongs() {
   return (
-    <section className="grid place-items-center min-h-screen bg-gradient-to-t from-blue-200 to-indigo-900 p-5">
+    <section className="grid place-items-center min-h-screen rounded-md bg-gradient-to-t from-blue-200 to-indigo-900 p-5">
   <div>
     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-200 mb-5">My Songs</h1>
     <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
