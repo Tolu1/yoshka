@@ -1,14 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract Yoshka {
-    enum MusicType { ASSET, SONG }
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+
+contract Yoshka is Ownable {
+    enum MusicType {
+        ASSET,
+        SONG
+    }
 
     struct MusicItem {
         MusicType musicType;
         string title;
         string description;
-        address creator;
         string fileType;
         string duration;
         string thumbnailURI;
@@ -20,47 +25,33 @@ contract Yoshka {
     }
 
     mapping(uint256 => MusicItem) public musicItems;
+    mapping(uint256 => address) private itemCreators; // Mapping to track creators
 
-    event NFTMinted(uint256 indexed tokenId, address indexed creator, string title);
-    event OwnershipTransferred(uint256 indexed tokenId, address indexed previousOwner, address indexed newOwner);
+    event NFTMinted(
+        uint256 indexed tokenId,
+        address indexed creator,
+        string title
+    );
+    event OwnershipTransferred(
+        uint256 indexed tokenId,
+        address indexed previousOwner,
+        address indexed newOwner
+    );
 
-    address private owner;
     mapping(address => bool) private admins;
     uint256 private nextTokenId;
 
     constructor() {
-        owner = msg.sender;
         admins[msg.sender] = true;
         nextTokenId = 1;
     }
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can call this function");
-        _;
-    }
-
     modifier onlyAdmin() {
-        require(admins[msg.sender] || msg.sender == owner, "Only admins can call this function");
+        require(
+            admins[msg.sender] || msg.sender == owner(),
+            "Only admins can call this function"
+        );
         _;
-    }
-
-    modifier onlyCreator(uint256 tokenId) {
-        require(msg.sender == musicItems[tokenId].creator, "Only the creator can perform this action");
-        _;
-    }
-
-    bool private locked;
-
-    modifier noReentrancy() {
-        require(!locked, "Reentrant call");
-        locked = true;
-        _;
-        locked = false;
-    }
-
-    function transferOwnership(address newOwner) external onlyOwner {
-        require(newOwner != address(0), "Invalid address");
-        owner = newOwner;
     }
 
     function addAdmin(address newAdmin) external onlyOwner {
@@ -71,6 +62,15 @@ contract Yoshka {
     function removeAdmin(address admin) external onlyOwner {
         require(admins[admin], "Not an admin");
         admins[admin] = false;
+    }
+
+    bool private reentrancyLock = false;
+
+    modifier noReentrancy() {
+        require(!reentrancyLock, "Reentrant call");
+        reentrancyLock = true;
+        _;
+        reentrancyLock = false;
     }
 
     function mintNFT(
@@ -92,7 +92,6 @@ contract Yoshka {
             musicType: _musicType,
             title: _title,
             description: _description,
-            creator: msg.sender,
             fileType: _fileType,
             duration: _duration,
             thumbnailURI: _thumbnailURI,
@@ -104,6 +103,7 @@ contract Yoshka {
         });
 
         musicItems[tokenId] = newItem;
+        itemCreators[tokenId] = msg.sender; // Set the creator for this token
 
         emit NFTMinted(tokenId, msg.sender, _title);
     }
@@ -130,7 +130,6 @@ contract Yoshka {
                 musicType: _musicTypes[i],
                 title: _titles[i],
                 description: _descriptions[i],
-                creator: msg.sender,
                 fileType: _fileTypes[i],
                 duration: _durations[i],
                 thumbnailURI: _thumbnailURIs[i],
@@ -140,17 +139,24 @@ contract Yoshka {
                 royaltyPercentage: _royaltyPercentages[i],
                 ingredients: _ingredients[i]
             });
+
             musicItems[tokenId] = newItem;
+            itemCreators[tokenId] = msg.sender; // Set the creator for this token
 
             emit NFTMinted(tokenId, msg.sender, _titles[i]);
         }
     }
 
-    function batchTransferNFTs(uint256[] memory _tokenIds, address _to) external {
+    function batchTransferNFTs(uint256[] memory _tokenIds, address _to)
+        external
+    {
         for (uint256 i = 0; i < _tokenIds.length; i++) {
-            require(msg.sender == musicItems[_tokenIds[i]].creator, "Only the creator can transfer");
+            require(
+                itemCreators[_tokenIds[i]] == msg.sender,
+                "Only the creator can transfer"
+            );
 
-            musicItems[_tokenIds[i]].creator = _to;
+            itemCreators[_tokenIds[i]] = _to;
 
             emit OwnershipTransferred(_tokenIds[i], msg.sender, _to);
         }
@@ -177,7 +183,6 @@ contract Yoshka {
             musicType: _musicType,
             title: _title,
             description: _description,
-            creator: msg.sender,
             fileType: _fileType,
             duration: _duration,
             thumbnailURI: _thumbnailURI,
@@ -189,6 +194,7 @@ contract Yoshka {
         });
 
         musicItems[tokenId] = newItem;
+        itemCreators[tokenId] = msg.sender; // Set the creator for this token
 
         emit NFTMinted(tokenId, msg.sender, _title);
 
