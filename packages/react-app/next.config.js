@@ -7,7 +7,10 @@ const nextConfig = {
       fs: false
     }
     return config
-  }
+  },
+  images: {
+    domains: ['horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app', 'cdn.openart.ai'],
+  },
 }
 
 module.exports = nextConfig

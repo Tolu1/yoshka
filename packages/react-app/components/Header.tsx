@@ -27,22 +27,17 @@ function classNames(...classes: string[]) {
 export default function Header() {
     return (
       <>
-          <div className="bg-gray-800 pb-32">
+          <div className="bg-gray-700 pb-32">
 
-      <Disclosure as="nav" className="bg-gray-800">
+      <Disclosure as="nav" className="bg-gray-700">
             {({ open }) => (
               <>
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                  <div className="border-b border-gray-700">
+                  <div className="border-b border-gray-600">
                     <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                       <div className="flex items-center">
                         <div className="flex-shrink-0">
-                          {/* <img
-                            className="h-8 w-8"
-                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                            alt="Your Company"
-                          /> */}
-                          <Logo />
+                          <Logo className="h-9 w-9" />
                         </div>
                         <div className="block md:hidden px-2 ml-4">
                           <ConnectButton showBalance={{smallScreen: true, largeScreen: false}} />
@@ -55,7 +50,7 @@ export default function Header() {
                                 href={item.href}
                                 className={classNames(
                                   item.current
-                                    ? 'bg-gray-900 text-white'
+                                    ? 'bg-gray-800 text-white'
                                     : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                   'rounded-md px-3 py-2 text-sm font-medium'
                                 )}
@@ -138,7 +133,7 @@ export default function Header() {
                   </div>
                 </div>
 
-                <Disclosure.Panel className="border-b border-gray-700 md:hidden">
+                <Disclosure.Panel className="border-b border-gray-600 md:hidden">
                   <div className="space-y-1 px-2 py-3 sm:px-3">
                     {navigation.map((item) => (
                       <Disclosure.Button
@@ -146,7 +141,7 @@ export default function Header() {
                         as="a"
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          item.current ? 'bg-gray-800 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'block rounded-md px-3 py-2 text-base font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -155,7 +150,7 @@ export default function Header() {
                       </Disclosure.Button>
                     ))}
                   </div>
-                  <div className="border-t border-gray-700 pb-3 pt-4">
+                  <div className="border-t border-gray-600 pb-3 pt-4">
                     <div className="flex items-center px-5">
                       <div className="flex-shrink-0">
                         <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
