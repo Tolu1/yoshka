@@ -42,7 +42,7 @@ export default function Header() {
                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                             alt="Your Company"
                           /> */}
-                          <Logo />
+                          <Logo className="h-9 w-9" />
                         </div>
                         <div className="block md:hidden px-2 ml-4">
                           <ConnectButton showBalance={{smallScreen: true, largeScreen: false}} />

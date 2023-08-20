@@ -40,9 +40,9 @@ function App({ Component, pageProps }: AppProps) {
                 appInfo={appInfo}
                 coolMode={true}
             >
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
             </RainbowKitProvider>
         </WagmiConfig>
     );
