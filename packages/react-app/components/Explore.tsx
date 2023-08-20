@@ -98,7 +98,7 @@ function Asset({name, title, email, role, telephone, imageUrl, uri}: Asset) {
   }, [playing])
 
   return (
-  <li className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
+  <li className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white bg-clip-border shadow shadow-shadow-500">
     <div className="flex w-full items-center justify-between space-x-6 p-6">
       <div className="flex-1 truncate">
         <div className="flex items-center space-x-3">
@@ -134,7 +134,7 @@ function Asset({name, title, email, role, telephone, imageUrl, uri}: Asset) {
             className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
           >
             <DocumentPlusIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-            Add
+            Use
           </button>
         </div>
         <div className="h-1 bg-gray-300 absolute left-0 w-full">
@@ -168,12 +168,12 @@ function Explore() {
         <div className="flex space-x-6 py-2">
         <button 
             onClick={() => {setAddAsset(true)}}
-            className="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-200 ease-in-out">
+            className="bg-teal-500 hover:bg-teal-600/90 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-200 ease-in-out">
             Add Asset
         </button>
         <button 
           onClick={() => {setPublish(true)}}
-          className="bg-purple-300 hover:bg-purple-400/90 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-200 ease-in-out">
+          className="bg-purple-400 hover:bg-purple-500/90 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-200 ease-in-out">
           Publish Song
       </button>
       </div>

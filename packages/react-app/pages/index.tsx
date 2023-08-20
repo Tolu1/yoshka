@@ -19,7 +19,7 @@ export default function Home() {
     <div>
       <main className="-mt-32">
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-          <div className="relative min-h-screen bg-white rounded-lg shadow-lg p-8">
+          <div className="relative min-h-screen bg-white rounded-lg shadow-lg shadow-black p-8">
         <h1 className="relative bg-gray-100 rounded-md px-3 py-2 text-sm font-bold text-center tracking-wider text-gray-400 text-opacity-80">Yoshka</h1>
         <div className="block pb-6 bg-white">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">

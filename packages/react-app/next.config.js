@@ -9,7 +9,7 @@ const nextConfig = {
     return config
   },
   images: {
-    domains: ['horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app'],
+    domains: ['horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app', 'cdn.openart.ai'],
   },
 }
 

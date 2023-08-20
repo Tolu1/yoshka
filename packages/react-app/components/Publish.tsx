@@ -64,9 +64,10 @@ function Publish({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Reac
                                   <label htmlFor="" className="block text-sm font-medium text-gray-600"> Song title </label>
                                   <div className="relative mt-2">
                                       <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                                          <svg className="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                              <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                          <svg className="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
                                           </svg>
+
                                       </div>
 
                                       <input type="text" name="" id="" placeholder="" value={companyName} onChange={(e) => setCompanyName(e.target.value)} className="border block w-full py-3 pl-12 pr-4 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
@@ -79,9 +80,9 @@ function Publish({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Reac
                     <div className="mx-auto sm:px-6 lg:px-8 max-w-7xl">
                         <div className="max-w-xl mx-auto">
                             <div className="sm:flex sm:items-center sm:space-x-8">
-                                <label htmlFor="" className="block text-sm font-medium text-gray-600"> Upload song art: </label>
+                                <label htmlFor="" className="block text-sm font-medium text-gray-600"> Song art </label>
                                 <div className="relative mt-2 sm:mt-0 sm:flex-1">
-                                    <input type="file" className="block w-full px-4 border py-3 placeholder-gray-500 border border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
+                                    <input type="file" className="block w-full px-4 border py-3 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
                                 </div>
                             </div>
                         </div>
