@@ -101,6 +101,38 @@ const About = () => {
             </blockquote>
 
             <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+              The Problems We Solve
+            </h1>
+
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+            Fragmented Song Ownership and Royalties Management
+            </h4>
+
+            <blockquote>
+              <p>
+              Traditional music distribution and ownership structures often result in fragmented ownership of songs and difficulties in managing royalties. Yoshka addresses this problem by introducing NFTs to tokenize individual song stems and complete compositions. This enables seamless royalty management and automated recognition of contributors, ensuring that artists are accurately compensated for their creative contributions. 
+              </p>
+            </blockquote>
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+            Limited Creative Control for Artists 
+            </h4>
+
+            <blockquote>
+              <p>
+              In conventional music production, artists might lack control over their creations once they're released. Yoshka empowers artists with greater creative control by enabling them to tokenize and manage their music's individual components through NFTs. This way, artists can assert ownership and control over their work, even after it's shared with the world.  
+              </p>
+            </blockquote>
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+            Lack of Direct Recognition and Fair Compensation 
+            </h4>
+
+            <blockquote>
+              <p>
+              Collaborators and contributors to a song often struggle to receive fair recognition and compensation for their contributions. Yoshka's NFT-based approach ensures that contributors are automatically recognized and rewarded whenever their work is used or shared. This solves the problem of fair compensation for various contributors, including musicians, producers, and songwriters.
+              </p>
+            </blockquote>
+
+            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
               Key Innovations
             </h1>
 
