@@ -4,6 +4,7 @@ import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import celoGroups from "@celo/rainbowkit-celo/lists";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
+import '../styles/MusicPlayer.css'
 import "@rainbow-me/rainbowkit/styles.css";
 import { publicProvider } from "wagmi/providers/public";
 import { Alfajores, Celo } from "@celo/rainbowkit-celo/chains";
@@ -40,9 +41,9 @@ function App({ Component, pageProps }: AppProps) {
                 appInfo={appInfo}
                 coolMode={true}
             >
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
             </RainbowKitProvider>
         </WagmiConfig>
     );

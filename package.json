@@ -8,6 +8,7 @@
     "scripts": {
         "react-app:dev": "yarn workspace @yoshka/react-app dev",
         "react-app:build": "yarn workspace @yoshka/react-app build",
+        "build-ui": "yarn workspace @yoshka/react-app build",
         "react-app:start": "yarn workspace @yoshka/react-app start",
         "react-app:lint": "yarn workspace @yoshka/react-app lint",
         "hardhat:test": "yarn workspace @yoshka/hardhat test",
