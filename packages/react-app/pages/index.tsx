@@ -3,9 +3,15 @@ import Explore from "@/components/Explore";
 import Studio from "@/components/Studio";
 import MySongs from "@/components/MySongs";
 import NFTs from "@/components/NFTs";
-import MusicPlayer from "@/components/MusicPlayer";
+// import MusicPlayer from "@/components/MusicPlayer";
 import React, { useState } from 'react';
 import TabCanvas from "@/components/TabCanvas";
+
+import dynamic from 'next/dynamic';
+
+const MusicPlayer = dynamic(() => import('@/components/MusicPlayer'), {
+  ssr: false
+});
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<string | undefined>('explore');
@@ -62,7 +68,7 @@ export default function Home() {
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
                                 </svg>
                               
-                                Music Player
+                                Stream Music
                             </div>
                         </nav>                        
                     </div>
