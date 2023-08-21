@@ -54,7 +54,7 @@ function Publish({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Reac
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                      Ready to share your music with the world? Let's make some waves!🎵
+                      Ready to share your music with the world? Let&apos;s make some waves!🎵
                       </p>
                     </div>
                     <div className="py-4 bg-white">

@@ -58,7 +58,7 @@ function CopyrightNotice({ open, setOpen }: {open: boolean, setOpen: React.Dispa
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                      While we'd love to serenade you with tunes. This is just a demo, not Spotify! We can't play copyrighted jams.
+                      While we&apos;d love to serenade you with tunes. This is just a demo, not Spotify! We can&apos;t play copyrighted jams.
                       </p>
                     </div>
                   </div>

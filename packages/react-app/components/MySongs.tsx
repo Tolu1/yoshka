@@ -63,7 +63,7 @@ function MySongs() {
     <section className="grid justify-items-center h-full px-7 py-4 rounded-md">
       <div>
         <div className="flex text-lg sm:text-xl md:text-2xl font-bold text-gray-300">
-          <span className='py-2 mb-3'>Songs you've created...</span>
+          <span className='py-2 mb-3'>Songs you&apos;ve created...</span>
         </div>
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {songs.map((song, index) => (

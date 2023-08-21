@@ -81,7 +81,7 @@ function Footer() {
           <div className="space-y-8">
             <Logo className="h-9 w-9" />
             <p className="text-sm leading-6 text-gray-300">
-              Remaking the music landscape with a fresh approach to creator's intellectual property rights. Access and create music assets on the Blockchain, enable layered royalties in your work and experience a decentralized ownerless streaming platform.
+              Remaking the music landscape with a fresh approach to creator&apos;s intellectual property rights. Access and create music assets on the Blockchain, enable layered royalties in your work and experience a decentralized ownerless streaming platform.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
