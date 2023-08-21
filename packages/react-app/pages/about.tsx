@@ -88,7 +88,7 @@ const About = () => {
               Welcome to Yoshka, a groundbreaking hackathon project that aims to revolutionize the way songs are structured, valued, and owned. We have leveraged the power of the Celo blockchain and harnessed Bunzz for DApp deployment to create a platform that introduces an entirely new paradigm for the music industry.
             </p>
 
-              <img className="object-cover w-full" src="https://www.pexels.com/@gabby-k/" alt="" />
+              {/* <img className="object-cover w-full" src="https://www.pexels.com/@gabby-k/" alt="" /> */}
 
             <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
               Our Vision
@@ -112,7 +112,7 @@ const About = () => {
               In the absence of a full-fledged Digital Audio Workstation (DAW), Yoshka enables users to upload song stems. These stems are the fundamental building blocks of music, representing individual components that collectively form a harmonious whole.
             </p>
 
-            <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" />
+            {/* <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" /> */}
 
             <h4 className="mt-6 font-bold text-center text-gray-700">
               Tokenization: Empowering Artists with NFTs
@@ -121,7 +121,7 @@ const About = () => {
               With Yoshka, each stem and the assembled song itself is transformed into a unique NFT (Non-Fungible Token). This ingenious approach embeds ownership and value directly within the digital creation, empowering artists with a new level of recognition and creative control.
             </p>
 
-            <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" />
+            {/* <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" /> */}
 
             <h4 className="mt-6 font-bold text-center text-gray-700">
               Automated Royalty Management
@@ -131,7 +131,7 @@ const About = () => {
               Our platform revolutionizes the way royalties are distributed. Through the power of NFTs, contributors are automatically recognized and compensated for their creative contributions. This ensures that every artist receives their due recognition and financial rewards.
             </p>
 
-            <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" />
+            {/* <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" /> */}
 
             <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
               Journey of Creation
