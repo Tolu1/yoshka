@@ -7,26 +7,16 @@ const About = () => {
         <div className="max-w-xl mx-auto text-center">        
 
           <h1 className="mt-6 text-4xl font-bold text-gray-700 opacity-95 sm:text-5xl">
-          <span>matr</span>Yoshka
+              <span>About🪆</span> Yoshka 
           </h1>
 
           <div className="flex items-center justify-center mt-8 space-x-2">
             <p className="text-base font-medium text-gray-900">
               <a href="#" title="" className="">
-                Subtitle
+                Harmonizing Music, Empowering Artists: Unleash the Magic of Yoshka NFT Melodies
               </a>
             </p>
-            <span className="text-base font-medium text-gray-500">
-              •
-            </span>
-            <p className="text-base font-medium text-gray-500">
-              November 22, 2021
-            </p>
           </div>
-        </div>
-
-        <div className="mt-8 sm:mt-12 lg:mt-16 aspect-w-16 aspect-h-9 lg:aspect-h-6">
-          <img className="object-cover w-full h-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/cover.png" alt="" />
         </div>
 
         <div className="grid grid-cols-1 mt-8 sm:mt-12 lg:mt-16 lg:grid-cols-12 lg:gap-x-12 gap-y-8">
@@ -95,80 +85,92 @@ const About = () => {
           <article
             className="prose lg:col-span-8 max-w-none prose-gray prose-blockquote:px-8 prose-blockquote:py-3 prose-blockquote:lg:text-xl prose-blockquote:font-medium prose-blockquote:text-gray-900 prose-blockquote:border-gray-900 prose-blockquote:border-l-2 prose-blockquote:lg:leading-9 prose-blockquote:not-italic prose-blockquote:bg-gray-100 prose-blockquote:text-lg prose-blockquote:leading-8">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id pellentesque ut pellentesque varius amet
-              mauris.
-              Tempor,
-              risus, congue gravida nulla tincidunt nec diam. Tincidunt magnis eu, vitae dictumst commodo dolor in.
-              Aenean
-              dictumst
-              risus posuere a at id fermentum nibh. Luctus nunc bibendum duis egestas scelerisque.
+              Welcome to Yoshka, a groundbreaking hackathon project that aims to revolutionize the way songs are structured, valued, and owned. We have leveraged the power of the Celo blockchain and harnessed Bunzz for DApp deployment to create a platform that introduces an entirely new paradigm for the music industry.
             </p>
-            <p>
-              Maecenas in pharetra hendrerit neque, tellus eu. Arcu tempus, vel blandit adipiscing a sed cursus. Augue
-              vestibulum
-              tempus lectus gravida condimentum mauris iaculis. Sodales imperdiet id maecenas molestie id.
-            </p>
+
+              <img className="object-cover w-full" src="https://www.pexels.com/@gabby-k/" alt="" />
+
+            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+              Our Vision
+            </h1>
 
             <blockquote>
               <p>
-                Tincidunt magnis eu, vitae dictumst commodo dolor in. Aen ean dictumst risus posuere a at id fermentum
-                nibh. Luctus
-                nunc bibendum duis egestas scelerisque.
+                At Yoshka, we envision a future where music transcends traditional boundaries and becomes an interconnected network of creativity, collaboration, and ownership. Inspired by the concept of Matryoshka dolls, our platform transforms songs into a tapestry of individual elements, allowing for layered ownership, value attribution, and seamless royalty management.
               </p>
             </blockquote>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id pellentesque ut pellentesque varius amet
-              mauris.
-              Tempor,
-              risus, congue gravida nulla tincidunt nec diam. Tincidunt magnis eu, vitae dictumst commodo dolor in.
-              Aenean
-              dictumst
-              risus posuere a at id fermentum nibh. Luctus nunc bibendum duis egestas scelerisque.
-            </p>
+            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+              Key Innovations
+            </h1>
+
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+              Stem Uploads: Redefining Song Creation
+            </h4>
 
             <p>
-              Maecenas in pharetra hendrerit neque, tellus eu. Arcu tempus, vel blandit adipiscing a sed cursus. Augue
-              vestibulum
-              tempus lectus gravida condimentum mauris iaculis. Sodales imperdiet id maecenas molestie id.
+              In the absence of a full-fledged Digital Audio Workstation (DAW), Yoshka enables users to upload song stems. These stems are the fundamental building blocks of music, representing individual components that collectively form a harmonious whole.
             </p>
-
-            <ul className="marker:text-gray-900">
-              <li>
-                Id pellentesque ut pellentesque varius amet mauris.
-              </li>
-
-              <li>
-                Tempor, risus, congue gravida nulla tincidunt.
-              </li>
-
-              <li>
-                Tincidunt magnis eu, vitae dictumst.
-              </li>
-
-              <li>
-                Aenean dictumst risus posuere a at id fermentum nibh.
-              </li>
-            </ul>
 
             <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" />
 
-            <h2>
-              How to start the process?
-            </h2>
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+              Tokenization: Empowering Artists with NFTs
+            </h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id pellentesque ut pellentesque varius amet
-              mauris.
-              Tempor,
-              risus, congue gravida nulla tincidunt nec diam. Tincidunt magnis eu, vitae dictumst commodo dolor in.
-              Aenean
-              dictumst
-              risus posuere a at id fermentum nibh. Luctus nunc bibendum duis egestas scelerisque.
+              With Yoshka, each stem and the assembled song itself is transformed into a unique NFT (Non-Fungible Token). This ingenious approach embeds ownership and value directly within the digital creation, empowering artists with a new level of recognition and creative control.
             </p>
+
+            <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" />
+
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+              Automated Royalty Management
+            </h4>
+
             <p>
-              Maecenas in pharetra hendrerit neque, tellus eu. Arcu tempus, vel blandit adipiscing a sed cursus. Augue
-              vestibulum
-              tempus lectus gravida condimentum mauris iaculis. Sodales imperdiet id maecenas molestie id.
+              Our platform revolutionizes the way royalties are distributed. Through the power of NFTs, contributors are automatically recognized and compensated for their creative contributions. This ensures that every artist receives their due recognition and financial rewards.
+            </p>
+
+            <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" />
+
+            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+              Journey of Creation
+            </h1>
+
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+              User Interaction
+            </h4>
+
+            <p className="text-center">
+              Begin your journey by uploading stems via our intuitive web platform.
+            </p>
+
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+              Audio Assembly
+            </h4>
+
+            <p className="text-center">
+              Our platform compiles these stems to craft a symphony, appending the necessary metadata.
+            </p>
+
+            <h4 className="mt-6 font-bold text-center text-gray-700">
+              Tokenization
+            </h4>
+
+            <p className="text-center">
+              Witness the magic as both the song and its stems transform into distinct NFTs on the Celo blockchain.
+            </p>
+
+            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+              Join Us on This Magical Journey
+            </h1>
+
+            <p className="text-center">
+              Yoshka is a testament to innovation, creativity, and community collaboration. As we continue to push the boundaries of the music industry, we invite you to join us on this magical journey. Lets redefine music, one NFT at a time.
+            </p>
+
+            <p className="text-center">
+              Visit us at yoshka-music.com to explore the future of music creation and ownership.
             </p>
           </article>
         </div>
