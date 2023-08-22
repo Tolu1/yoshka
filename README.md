@@ -4,7 +4,10 @@ Yoshka aims to revolutionize the structure and valuation of songs. Using the Cel
 ## Demo & Resources
 
 🔗 **Live Demo**: [Yoshka Demo](https://yoshka.vercel.app/)  
-📊 **Pitch Deck & Project Walkthrough**: [View Pitch Deck](#PitchDeck-Link-Here)  - coming very very soon
+
+📊 **Pitch Deck**: [View Pitch Deck](https://www.loom.com/share/542ceadf7e8742a08621dac2401bb0c1)
+
+🌟 **Video Walkthrough**: [See what we built](#Walkthrough-Video-Link-Here)  - coming very very soon
 
 ![Yoshka](screenshot.png)
 
