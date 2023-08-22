@@ -1,6 +1,6 @@
 node_modules
 .env
-packages/*/.env
+packages/react-app/.env
 
 # IntelliJ project files
 *.iml

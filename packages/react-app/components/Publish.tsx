@@ -2,10 +2,55 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from "./Logo"
+import axios from "axios";
 
 function Publish({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<React.SetStateAction<boolean>>}) {
-  const [companyName, setCompanyName] = useState('');
-  const [file, setFile] = useState('');
+    const pinata_api_key = process.env.NEXT_PUBLIC_PINATA_API_KEY;
+    const pinata_secret_api_key = process.env.NEXT_PUBLIC_PINATA_API_SECRET;
+    const [name, setName] = useState('');
+    const [audioFile, setAudioFile] = useState<File | null>(null);
+    const [error, setError] = useState<string | null>(null);
+    const [status, setStatus] = useState('');
+
+    const handleAddAsset = async () => {
+        setError(null);
+
+        if (!name) {
+            setError('Please enter an asset name.');
+            return;
+        }
+
+        if (!audioFile) {
+            setError('Please upload both an art file and an audio file.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', audioFile); //song
+
+        try {
+            const response = await axios.post(
+                'https://api.pinata.cloud/pinning/pinFileToIPFS',
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                        'pinata_api_key': pinata_api_key,
+                        'pinata_secret_api_key': pinata_secret_api_key,
+                    },
+                }
+            );
+
+            const ipfsHash = response.data.IpfsHash;
+            console.log('IPFS Hash:', ipfsHash);
+
+            // Logic to handle adding asset with the IPFS hash
+            setOpen(false);
+        } catch (error) {
+            console.error('Error uploading to Pinata:', error);
+            setError('An error occurred while uploading to Pinata.');
+        }
+    };
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -70,7 +115,11 @@ function Publish({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Reac
 
                                       </div>
 
-                                      <input type="text" name="" id="" placeholder="" value={companyName} onChange={(e) => setCompanyName(e.target.value)} className="border block w-full py-3 pl-12 pr-4 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
+                                      <input
+                                          type="text" name="" id="" placeholder="" value={name}
+                                          onChange={(e) => setName(e.target.value)}
+                                          className="border block w-full py-3 pl-12 pr-4 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600"
+                                      />
                                   </div>
                               </div>
                           </div>
@@ -82,7 +131,10 @@ function Publish({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Reac
                             <div className="sm:flex sm:items-center sm:space-x-8">
                                 <label htmlFor="" className="block text-sm font-medium text-gray-600"> Song art </label>
                                 <div className="relative mt-2 sm:mt-0 sm:flex-1">
-                                    <input type="file" className="block w-full px-4 border py-3 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
+                                    <input type="file"
+                                           onChange={(e) => setAudioFile(e.target.files ? e.target.files[0] : null)}
+                                           className="block w-full px-4 border py-3 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -90,12 +142,15 @@ function Publish({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Reac
                     </div>
                   </div>
                 </div>
+                  {error && (
+                      <div className="mt-2 text-red-600 text-sm">{error}</div>
+                  )}
                 <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                  <button
-                    type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-purple-300 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-400/90 sm:ml-3 sm:w-auto"
-                    onClick={() => setOpen(false)}
-                  >
+                    <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md bg-teal-400 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 sm:ml-3 sm:w-auto"
+                        onClick={handleAddAsset}
+                    >
                     Publish
                   </button>
                   <button
