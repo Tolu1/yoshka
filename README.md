@@ -6,6 +6,8 @@ Yoshka aims to revolutionize the structure and valuation of songs. Using the Cel
 🔗 **Live Demo**: [Yoshka Demo](https://yoshka.vercel.app/)  
 📊 **Pitch Deck & Project Walkthrough**: [View Pitch Deck](#PitchDeck-Link-Here)  - coming very very soon
 
+![Yoshka](screenshot.png)
+
 ## Overview
 Inspired by the layered design of Matryoshka dolls, songs on Yoshka are seen as composites of individual stems or elements. The current platform simulates a very basic workflow of a cloud-based Digital Audio Workstation (DAW) experience, where users can explore pre-featured stems and even contribute their unique creations and produce and release songs, we envision future iterations featuring direct DAW integration.
 
