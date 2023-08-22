@@ -119,7 +119,7 @@ const About = () => {
 
             <blockquote>
               <p>
-              In conventional music production, artists might lack control over their creations once they're released. Yoshka empowers artists with greater creative control by enabling them to tokenize and manage their music's individual components through NFTs. This way, artists can assert ownership and control over their work, even after it's shared with the world.  
+              In conventional music production, artists might lack control over their creations once they&apos;re released. Yoshka empowers artists with greater creative control by enabling them to tokenize and manage their music&apos;s individual components through NFTs. This way, artists can assert ownership and control over their work, even after it&apos;s shared with the world.  
               </p>
             </blockquote>
             <h4 className="mt-6 font-bold text-center text-gray-700">
@@ -128,7 +128,7 @@ const About = () => {
 
             <blockquote>
               <p>
-              Collaborators and contributors to a song often struggle to receive fair recognition and compensation for their contributions. Yoshka's NFT-based approach ensures that contributors are automatically recognized and rewarded whenever their work is used or shared. This solves the problem of fair compensation for various contributors, including musicians, producers, and songwriters.
+              Collaborators and contributors to a song often struggle to receive fair recognition and compensation for their contributions. Yoshka&apos;s NFT-based approach ensures that contributors are automatically recognized and rewarded whenever their work is used or shared. This solves the problem of fair compensation for various contributors, including musicians, producers, and songwriters.
               </p>
             </blockquote>
 
