@@ -2,12 +2,57 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from "./Logo"
+import axios from 'axios';
 
 function AddAsset({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<React.SetStateAction<boolean>>}) {
-  const [companyName, setCompanyName] = useState('');
-  const [file, setFile] = useState('');
+    const pinata_api_key = process.env.NEXT_PUBLIC_PINATA_API_KEY;
+    const pinata_secret_api_key = process.env.NEXT_PUBLIC_PINATA_API_SECRET;
 
-  return (
+    const [name, setName] = useState('');
+    const [artFile, setArtFile] = useState<File | null>(null);
+    const [audioFile, setAudioFile] = useState<File | null>(null);
+    const [error, setError] = useState<string | null>(null);
+
+    const handleAddAsset = async () => {
+        setError(null);
+
+        if (!name) {
+            setError('Please enter an asset name.');
+            return;
+        }
+
+        if (!artFile || !audioFile) {
+            setError('Please upload both an art file and an audio file.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', artFile, artFile.name); // Use 'file' for artFile
+        formData.append('file', audioFile, audioFile.name); // Use 'file' for audioFile
+
+        const pinataAPIUrl = 'https://api.pinata.cloud/pinning/pinFileToIPFS';
+
+        try {
+            const response = await axios.post(pinataAPIUrl, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'pinata_api_key': pinata_api_key,
+                    'pinata_secret_api_key': pinata_secret_api_key,
+                },
+            });
+
+            const ipfsHash = response.data.IpfsHash;
+            console.log('IPFS Hash:', ipfsHash);
+
+            // Logic to handle adding asset with the IPFS hash
+            setOpen(false);
+        } catch (error) {
+            console.error('Error uploading to Pinata:', error);
+            setError('An error occurred while uploading to Pinata.');
+        }
+    };
+
+    return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
@@ -68,8 +113,11 @@ function AddAsset({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Rea
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
                                         </svg>
                                       </div>
-
-                                      <input type="text" name="" id="" placeholder="" value={companyName} onChange={(e) => setCompanyName(e.target.value)} className="border block w-full py-3 pl-12 pr-4 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
+                                      <input
+                                          type="text" name="" id="" placeholder="" value={name}
+                                          onChange={(e) => setName(e.target.value)}
+                                          className="border block w-full py-3 pl-12 pr-4 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600"
+                                      />
                                   </div>
                               </div>
                           </div>
@@ -81,7 +129,13 @@ function AddAsset({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Rea
                             <div className="sm:flex sm:items-center sm:space-x-8">
                                 <label htmlFor="" className="block text-sm font-medium text-gray-600"> Asset art </label>
                                 <div className="relative mt-2 sm:mt-0 sm:flex-1">
-                                    <input type="file" className="block w-full px-4 border py-3 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
+                                    <input
+                                        type="file"
+                                        id="artFile"
+                                        accept="image/*"
+                                        onChange={(e) => setArtFile(e.target.files ? e.target.files[0] : null)}
+                                        className="block w-full px-4 border py-3 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -93,7 +147,10 @@ function AddAsset({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Rea
                             <div className="sm:flex sm:items-center sm:space-x-8">
                                 <label htmlFor="" className="block text-sm font-medium text-gray-600"> Audio file </label>
                                 <div className="relative mt-2 sm:mt-0 sm:flex-1">
-                                    <input type="file" className="block w-full px-4 border py-3 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600" />
+                                    <input type="file"
+                                        onChange={(e) => setAudioFile(e.target.files ? e.target.files[0] : null)}
+                                        className="block w-full px-4 border py-3 placeholder-gray-500 border-gray-300 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm caret-indigo-600"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -101,14 +158,17 @@ function AddAsset({ open, setOpen }: {open: boolean, setOpen: React.Dispatch<Rea
                     </div>
                   </div>
                 </div>
+                  {error && (
+                      <div className="mt-2 text-red-600 text-sm">{error}</div>
+                  )}
                 <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                  <button
-                    type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-teal-400 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 sm:ml-3 sm:w-auto"
-                    onClick={() => setOpen(false)}
-                  >
-                    Add Asset
-                  </button>
+                    <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md bg-teal-400 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 sm:ml-3 sm:w-auto"
+                        onClick={handleAddAsset}
+                    >
+                        Add Asset
+                    </button>
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"

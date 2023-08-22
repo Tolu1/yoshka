@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Skeleton from 'react-loading-skeleton'
 import CopyrightNotice from './CopyrightNotice'
+import { useAccount, usePrepareContractWrite, useContractRead } from 'wagmi'
+// import abi from '../abi/yoshka.json';
+import { abi } from '../abi/yoshka';
+
 
 type CardProps = {
     imageUrl: string;
@@ -54,8 +58,31 @@ function Card({ imageUrl, title, creator, bid }: CardProps) {
     )
 }
 
+type NFTs = {
+    imageUrl: string;
+    title: string;
+    creator: string;
+    bid: number;
+  };
+
+type MusicType = "ASSET" | "SONG";
+
+type NFTMetadata = {
+    musicType: MusicType;
+    title: string;
+    description: string;
+    fileType: string;
+    duration: string;
+    thumbnailURI: string;
+    fileURI: string;
+    dateOfCreation: number;
+    initialPrice: number;
+    royaltyPercentage: number;
+    ingredients: number[];
+};
+
 function NFTs() {
-    const nfts = [
+   const demo = [
         {
             imageUrl: "/assets/img/kante.jpg",
             title: "KANTE",
@@ -81,6 +108,46 @@ function NFTs() {
             bid: 0.91 
         },       
       ];
+    const [nfts, setNfts] = useState<NFTs[]>(demo);
+
+    const { address, isConnected } = useAccount();
+
+    const { data: ownedTokenIds } = useContractRead({
+        address: "0xCc867437831bF788E6711694ae66fcCb82F18d3a",
+        abi: abi,
+        functionName: 'ownedNFTs',
+        args: [address],
+        watch: true
+    })
+
+    useEffect(() => {
+        console.log("owned tokens - " + ownedTokenIds)
+        // if (ownedTokenIds) {
+        //     const fetchNFTMetadata = async () => {
+        //         let fetchedNFTs = [];
+        //         for (let tokenId of ownedTokenIds) {
+        //             const { data: nftMetadata } = await useContractRead({
+        //                 address: "0xCc867437831bF788E6711694ae66fcCb82F18d3a",
+        //                 abi: abi,
+        //                 functionName: 'getMusicItemMetadata',
+        //                 args: [tokenId]
+        //             });
+        //             if (nftMetadata) {
+        //                 fetchedNFTs.push({
+        //                     imageUrl: nftMetadata.thumbnailURI,
+        //                     title: nftMetadata.title,
+        //                     creator: "You", // You might want to update this based on your needs
+        //                     bid: nftMetadata.initialPrice // Assuming 'bid' is the initial price
+        //                 });
+        //             }
+        //         }
+        //         setNfts([...demo, ...fetchedNFTs]);
+        //     };
+        //     fetchNFTMetadata();
+        // }
+    }, [ownedTokenIds]);
+
+
   return (
     <div className="px-7 py-4">
         <div className="flex text-lg sm:text-xl md:text-2xl font-bold text-gray-300">

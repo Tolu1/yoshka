@@ -1,57 +1,42 @@
 # Yoshka🪆
-Yoshka is a hackathon project aiming to redefine how songs are structured and valued. Built on the Celo blockchain and utilizing Bunzz for DApp deployment, it tokenizes song stems as NFTs, introducing layered ownership, value, and royalties management.
+Yoshka aims to revolutionize the structure and valuation of songs. Using the Celo blockchain and Bunzz for smart contract deployment, it tokenizes song stems as NFTs, offering a fresh perspective on song ownership, value, and royalties management.
+
+## Demo & Resources
+
+🔗 **Live Demo**: [Yoshka Demo](https://yoshka.vercel.app/)  
+📊 **Pitch Deck & Project Walkthrough**: [View Pitch Deck](#PitchDeck-Link-Here)  - coming very very soon
 
 ## Overview
-This platform takes inspiration from the concept of Matryoshka dolls, with songs being comprised of individual stems or elements. While we represent the Digital Audio Workstation (DAW) interaction via stem uploads, the future may see more direct DAW integration.
+Inspired by the layered design of Matryoshka dolls, songs on Yoshka are seen as composites of individual stems or elements. The current platform simulates a very basic workflow of a cloud-based Digital Audio Workstation (DAW) experience, where users can explore pre-featured stems and even contribute their unique creations and produce and release songs, we envision future iterations featuring direct DAW integration.
 
 ## Key Features
-- **Stem Uploads**: In the absence of a full DAW, users upload song stems, which represent individual components of a song.
-- **Tokenization**: Each stem, and the assembled song, is tokenized as an NFT, embedding ownership within.
-- **Royalty Management**: Through the NFTs, automated royalty distribution ensures contributors are recognized and compensated for their work.
+
+- **Stem Exploration**: Users can explore a rich collection of pre-featured stems.
+- **Unique Stem Upload**: Opportunity to add personal, unique stems to the platform.
+- **Tokenization**: Songs and their individual stems are tokenized as NFTs, encapsulating ownership.
+- **Royalty Management**: Automated NFT-driven royalty system ensures fair compensation for contributors.
 
 ## Technical Architecture
 
-### 1. Backend (Python + FastAPI)
-- Handles audio processing using the `pydub` library.
-- Generates metadata for the consolidated song.
-- Offers APIs for frontend interactions.
+### 1. Frontend (React)
+- User-friendly interface for stem exploration and upload.
+- Visual representation of NFTs and their metadata.
+- Real-time interactions with the Celo blockchain for various NFT operations using `wagmi` or `ethers.js`.
 
-### 2. Frontend (React)
-- Interface for stem uploads.
-- Visualization of NFTs and their metadata.
-- Interactions with the blockchain for NFT operations using `web3.js` or `ethers.js`.
-
-### 3. Blockchain (Celo)
-- Smart contracts (leaning towards the ERC-721 standard) for NFT management, including minting, transfers, and royalties.
+### 2. Blockchain (Celo & Bunzz for deployemt)
+- Employs smart contracts (predominantly adhering to the ERC-721 standard) for comprehensive NFT management, including minting, transfers, and royalty distribution.
+- Deployment of smart contracts using Bunzz and documentation facilitated by DeCipher an AI tool by Bunzz
 
 ## Workflow
-1. **User Interaction**: Upload stems via the web platform.
-2. **Audio Assembly**: Backend compiles stems to craft a song, appending corresponding metadata.
-3. **Tokenization**: The song and its stems are each transformed into distinct NFTs on the Celo blockchain.
-
-## Development Steps
-1. **Python Backend**
-   - Deploy FastAPI for a RESTful API setup.
-   - Process audio inputs and structure metadata.
-   - Explore `web3.py` integration for blockchain engagements.
-
-2. **Frontend Development**
-   - Incorporate React framework in celo composer for an interactive UI.
-   - Integrate `web3.js` for Celo interactions, permitting users to mint and supervise NFTs.
-
-3. **Smart Contract Development**
-   - Develop using Solidity or Bunzz template contract.
-   - Utilize OpenZeppelin for robust, standardized contracts.
-   - Initiate contracts on Celo testnets for evaluations, progressing to the mainnet.
-
-4. **Integration**
-   - Facilitate smooth data transition between frontend, backend, and the Celo network.
+1. **User Exploration**: Discover and play around with featured stems on the platform.
+2. **Stem Upload**: Contribute and introduce unique stems.
+3. **Tokenization**: Transform the shared stems and curated songs into distinct NFTs on the Celo blockchain.
 
 ## Future Directions
-- **Automated Ownerless Stream Platform**: A seamless system where songs can be streamed directly and royalities are paid directly to authors based on the nested ownership system and user interactions and preferences can highlight a particular stem component.
-- **Reusable Stems**: Envision each stem as a unique asset that can be utilized across various songs, amplifying its value and scope.
-- **AI Curation of Stems**: Harness the power of AI for automatic curation, sorting, and recommendation of stems or song elements, providing a tailored experience for users.
-- **Song Recognition**: Integrate advanced song recognition technology, akin to Shazam, that can identify songs, their stems, or specific components within them.
+- **Automated Stream Platform**: Enabling direct song streams with instant royalty disbursements.
+- **Reusable Stems**: Visualize stems as reusable assets across a myriad of songs, enhancing their value and applicability.
+- **AI Stem Curation**: AI-powered stem categorization, sorting, and recommendation for a personalized user experience.
+- **Song Recognition**: Advanced technologies capable of pinpointing songs, stems, or specific song components.
 - Evolve storage options for audio components (e.g., AWS S3, IPFS).
 - Incorporate user authentication and governance.
 - Tighten integration with Celo for enhanced NFT operations.
