@@ -4,16 +4,16 @@ const About = () => {
     return (
           <section className="-mt-32 bg-gray-50 rounded-lg py-12 sm:py-16 lg:py-20">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div className="max-w-xl mx-auto text-center">        
+        <div className="max-w-xl mx-auto text-center md:text-left">        
 
-          <h1 className="mt-6 text-4xl font-bold text-gray-700 opacity-95 sm:text-5xl">
-              <span>About🪆</span> Yoshka 
+          <h1 className="mt-6 text-3xl font-bold text-gray-700 opacity-95 sm:text-4xl">
+              <span>Yoshka🪆</span>  
           </h1>
 
           <div className="flex items-center justify-center mt-8 space-x-2">
-            <p className="text-base font-medium text-gray-900">
+            <p className="text-base font-medium text-gray-800">
               <a href="#" title="" className="">
-                Harmonizing Music, Empowering Artists: Unleash the Magic of Yoshka NFT Melodies
+                Documenting Music On The Blockchain, Empowering Artists: Unleash the Magic of layered ownership with Yoshka NFTs
               </a>
             </p>
           </div>
@@ -24,7 +24,7 @@ const About = () => {
             <ul className="flex space-x-3 lg:space-x-0 lg:space-y-4 lg:flex-col lg:items-center">
               <li>
                 <a href="#" title=""
-                  className="inline-flex items-center justify-center w-10 h-10 text-gray-900 transition-all duration-200 border border-gray-200 rounded-full hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                  className="inline-flex items-center justify-center w-10 h-10 text-gray-800 transition-all duration-200 border border-gray-200 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
                   <span className="sr-only">
                     Discord
                   </span>
@@ -38,7 +38,7 @@ const About = () => {
 
               <li>
                 <a href="#" title=""
-                  className="inline-flex items-center justify-center w-10 h-10 text-gray-900 transition-all duration-200 border border-gray-200 rounded-full hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                  className="inline-flex items-center justify-center w-10 h-10 text-gray-800 transition-all duration-200 border border-gray-200 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
                   <span className="sr-only">
                     Twitter
                   </span>
@@ -52,7 +52,7 @@ const About = () => {
 
               <li>
                 <a href="#" title=""
-                  className="inline-flex items-center justify-center w-10 h-10 text-gray-900 transition-all duration-200 border border-gray-200 rounded-full hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                  className="inline-flex items-center justify-center w-10 h-10 text-gray-800 transition-all duration-200 border border-gray-200 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
                   <span className="sr-only">
                     Telegram
                   </span>
@@ -66,7 +66,7 @@ const About = () => {
 
               <li>
                 <a href="#" title=""
-                  className="inline-flex items-center justify-center w-10 h-10 text-gray-900 transition-all duration-200 border border-gray-200 rounded-full hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                  className="inline-flex items-center justify-center w-10 h-10 text-gray-800 transition-all duration-200 border border-gray-200 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
                   <span className="sr-only">
                     LinkedIn
                   </span>
@@ -83,14 +83,14 @@ const About = () => {
           <div className="hidden lg:block lg:col-span-2"></div>
 
           <article
-            className="prose lg:col-span-8 max-w-none prose-gray prose-blockquote:px-8 prose-blockquote:py-3 prose-blockquote:lg:text-xl prose-blockquote:font-medium prose-blockquote:text-gray-900 prose-blockquote:border-gray-900 prose-blockquote:border-l-2 prose-blockquote:lg:leading-9 prose-blockquote:not-italic prose-blockquote:bg-gray-100 prose-blockquote:text-lg prose-blockquote:leading-8">
+            className="prose lg:col-span-8 max-w-none prose-gray prose-blockquote:px-8 prose-blockquote:py-3 prose-blockquote:lg:text-xl prose-blockquote:font-medium prose-blockquote:text-gray-800 prose-blockquote:border-gray-800 prose-blockquote:border-l-2 prose-blockquote:lg:leading-9 prose-blockquote:not-italic prose-blockquote:bg-gray-100 prose-blockquote:text-lg prose-blockquote:leading-8">
             <p>
               Welcome to Yoshka, a groundbreaking hackathon project that aims to revolutionize the way songs are structured, valued, and owned. We have leveraged the power of the Celo blockchain and harnessed Bunzz for DApp deployment to create a platform that introduces an entirely new paradigm for the music industry.
             </p>
 
               {/* <img className="object-cover w-full" src="https://www.pexels.com/@gabby-k/" alt="" /> */}
 
-            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+            <h1 className="mt-6 mb-6 text-2xl font-bold text-center md:text-left text-gray-700 opacity-95 sm:text-3xl">
               Our Vision
             </h1>
 
@@ -100,11 +100,11 @@ const About = () => {
               </p>
             </blockquote>
 
-            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+            <h1 className="mt-6 text-2xl font-bold text-center md:text-left text-gray-700 opacity-95 sm:text-3xl">
               The Problems We Solve
             </h1>
 
-            <h4 className="mt-6 font-bold text-center text-gray-700">
+            <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
             Fragmented Song Ownership and Royalties Management
             </h4>
 
@@ -113,7 +113,7 @@ const About = () => {
               Traditional music distribution and ownership structures often result in fragmented ownership of songs and difficulties in managing royalties. Yoshka addresses this problem by introducing NFTs to tokenize individual song stems and complete compositions. This enables seamless royalty management and automated recognition of contributors, ensuring that artists are accurately compensated for their creative contributions. 
               </p>
             </blockquote>
-            <h4 className="mt-6 font-bold text-center text-gray-700">
+            <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
             Limited Creative Control for Artists 
             </h4>
 
@@ -122,7 +122,7 @@ const About = () => {
               In conventional music production, artists might lack control over their creations once they&apos;re released. Yoshka empowers artists with greater creative control by enabling them to tokenize and manage their music&apos;s individual components through NFTs. This way, artists can assert ownership and control over their work, even after it&apos;s shared with the world.  
               </p>
             </blockquote>
-            <h4 className="mt-6 font-bold text-center text-gray-700">
+            <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
             Lack of Direct Recognition and Fair Compensation 
             </h4>
 
@@ -132,12 +132,12 @@ const About = () => {
               </p>
             </blockquote>
 
-            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+            <h1 className="mt-6 text-2xl font-bold text-center md:text-left text-gray-700 opacity-95 sm:text-3xl">
               Key Innovations
             </h1>
 
-            <h4 className="mt-6 font-bold text-center text-gray-700">
-              Stem Uploads: Redefining Song Creation
+            <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
+              Stem Exploration: Redefining Song Creation
             </h4>
 
             <p>
@@ -146,7 +146,7 @@ const About = () => {
 
             {/* <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" /> */}
 
-            <h4 className="mt-6 font-bold text-center text-gray-700">
+            <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
               Tokenization: Empowering Artists with NFTs
             </h4>
             <p>
@@ -155,7 +155,7 @@ const About = () => {
 
             {/* <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" /> */}
 
-            <h4 className="mt-6 font-bold text-center text-gray-700">
+            <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
               Automated Royalty Management
             </h4>
 
@@ -165,43 +165,43 @@ const About = () => {
 
             {/* <img className="object-cover w-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/blog-content/1/image.png" alt="" /> */}
 
-            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+            <h1 className="mt-6 mb-6 text-2xl font-bold text-center md:text-left text-gray-700 opacity-95 sm:text-3xl">
               Journey of Creation
             </h1>
 
-            <h4 className="mt-6 font-bold text-center text-gray-700">
+            {/* <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
               User Interaction
-            </h4>
+            </h4> */}
 
-            <p className="text-center">
-              Begin your journey by uploading stems via our intuitive web platform.
+            <p className="mt-6 text-center md:text-left">
+              <span className='text-bold'>1.</span> Begin your journey by exploring and uploading stems via our web platform.
             </p>
 
-            <h4 className="mt-6 font-bold text-center text-gray-700">
+            {/* <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
               Audio Assembly
-            </h4>
+            </h4> */}
 
-            <p className="text-center">
-              Our platform compiles these stems to craft a symphony, appending the necessary metadata.
+            <p className="mt-2 text-center md:text-left">
+            <span className='text-bold'>2.</span> Our platform compiles these stems to craft a symphony, appending the necessary metadata.
             </p>
 
-            <h4 className="mt-6 font-bold text-center text-gray-700">
+            {/* <h4 className="mt-6 font-bold text-center md:text-left text-gray-700">
               Tokenization
-            </h4>
+            </h4> */}
 
-            <p className="text-center">
-              Witness the magic as both the song and its stems transform into distinct NFTs on the Celo blockchain.
+            <p className="mt-2 text-center md:text-left">
+            <span className='text-bold'>3.</span> Witness the magic as both the song and its stems transform into distinct NFTs on the Celo blockchain.
             </p>
 
-            <h1 className="mt-6 text-4xl font-bold text-center text-gray-700 opacity-95 sm:text-5xl">
+            <h1 className="mt-6 mb-6 text-2xl font-bold text-center md:text-left text-gray-700 opacity-95 sm:text-3xl">
               Join Us on This Magical Journey
             </h1>
 
-            <p className="text-center">
+            <p className="text-center md:text-left">
               Yoshka is a testament to innovation, creativity, and community collaboration. As we continue to push the boundaries of the music industry, we invite you to join us on this magical journey. Lets redefine music, one NFT at a time.
             </p>
 
-            <p className="text-center">
+            <p className="text-center md:text-left">
               Visit us at yoshka-music.com to explore the future of music creation and ownership.
             </p>
           </article>
